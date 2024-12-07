@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cAvvento2024.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
+</head>
+<body class="h-full overflow-y-auto md:h-svh">
+    <div class="sky fixed bottom-0 top-0 left-0 right-0 z-10 pointer-events-none">
+    <!-- <div class="sky absolute w-full h-full min-h-screen z-10 pointer-events-none"> -->
+    </div>
+
+    <div id="backDrop" class="backdrop-blur-md"></div>
+
+    <div id="title" class="md:h-1/6 flex justify-between">
+        <div class="audioC hover:animate-spin cursor-pointer my-auto text-5xl">
+            🔔
+        </div>
+
+        <div class="flex">
+            Calendario <p id="btn">A</p>vvento
+        </div>
+    </div>
+
+    <div id="title2" class="md:h-1/6 flex justify-between hidden">
+        <div class="audioC hover:animate-spin cursor-pointer my-auto text-5xl">
+            🔔
+        </div>
+
+        <div class="flex space-x-5 justify-around">
+            <p> A&A </p>
+            <input type="text" name="" id="spreadsheetId" class="rounded border-4 h-10 my-auto border-black text-base">
+            
+            <button id="loadCalendar" class="rounded border-4 w-10 h-10 m-auto border-black text-xl bg-white 
+            hover:scale-110 active:scale-90
+            transition-transform">♥</button>
+        </div>
+    </div>
+
+    <div id="days_list" class="grid grid-cols-3 md:grid-cols-6 gap-3 md:h-5/6 p-2 z-1">
+    </div>
+
+    <script src="cAvvento2024.js"></script> 
+    <script src="snow.js"></script> 
+</body>
+</html>

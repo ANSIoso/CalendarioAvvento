@@ -1,0 +1,255 @@
+body{
+    background: linear-gradient(
+        to bottom,
+        #235E6F 0%,    /* Blu scuro all'inizio */
+        #235E6F 80%,   /* Blu scuro predominante fino all'80% */
+        #FFFFFF 100%   /* Bianco liscio nella parte finale */
+    );
+    /* background-color: #235E6F; */
+
+    font-family: 'Mountains of Christmas', sans-serif;                                     
+}
+
+#title{
+    padding: 20px 10px;
+
+    font-size: 4vh;
+}
+
+#title > div :hover{
+    color: #CC231E;
+}
+
+#title2{
+    padding: 20px 10px;
+
+    font-size: 4vh;
+}
+
+@media (min-width:1000px){
+    #title{    
+        padding: 0 10px;
+
+
+        font-size: 10vh;
+    }
+
+    #title2{    
+        padding: 0 10px;
+
+
+        font-size: 10vh;
+    }
+}
+
+.pac_component{
+    border: 5px solid black;
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    margin:-1px;
+    padding:1px;
+}
+
+.img_b{
+    filter: blur(8px);
+}
+
+.pac_content{
+    background-color: #F5624D;
+    border-color: #CC231E;
+
+    border-width: 8px;
+    overflow:hidden;
+}
+
+.pac_content_s{
+    border-color: #f79d27;
+}
+
+@keyframes popup-in {
+    0% { 
+        transform: scale(0.1); 
+        opacity: 0; 
+    }
+    50% { 
+        transform: scale(1.05); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: scale(1); 
+    }
+}
+
+@keyframes popup-out {
+    0% { 
+        transform: scale(0.1); 
+        opacity: 0; 
+    }
+    50% { 
+        transform: scale(1.05); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: scale(1); 
+    }
+}
+
+.focus {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 95%; /* Larghezza del div */
+    height: 70vh; /* Altezza del div */
+
+    margin: auto; /* Centro automatico */
+
+    z-index: 10;
+
+    animation: popup-in 0.5s ease-out; /* Animazione per l'entrata */
+}
+
+@media (min-width:1000px){
+    .focus{
+        width: 60vh; /* Larghezza del div */
+    }
+}
+
+.unfocus {
+    animation: popup-out 0.5s ease-out; /* L'animazione riguarda solo il scale e l'opacità */
+}
+
+@keyframes back-in {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 1;
+    }
+}
+
+#backDrop{
+    display: none;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: auto; /* Centro automatico */
+
+    z-index: 9;
+    animation: back-in 0.5s ease-out;
+}
+
+
+.pack_cap_decoration{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.day{
+    position: absolute;
+    
+    right: 0.5vh; 
+    bottom: -0.8vh;
+
+    font-size: 4vh;
+    font-weight: 700;
+    font-style: normal;
+
+    color: aliceblue;
+}
+
+.string{
+    position: absolute;
+    left: 0;
+    right: 0; 
+    top: 0;
+    bottom: 0;
+
+    background-color: #0F8A5F;
+}
+
+.o_string{
+    margin: auto 0;
+
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+
+    width: 100%;
+    height: 3vh;
+}
+
+.v_string{
+    margin: 0 auto;
+
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+
+    width: 3vh;
+    height: 100%;
+}
+
+.pac_cap{
+    background-color: #CC231E;
+
+    visibility: visible;
+    opacity: 1;
+
+
+    /* This timing applies on the way OUT */
+    transition-timing-function: ease-in;
+
+    /* Quick on the way out */
+    transition: 0.8s;
+}
+
+.pac_cap_s{
+    background-color: #f79d27;
+}
+
+.open {
+    transform: translateY(-50%) scale(1.05) rotate(-0.005turn);
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.locked {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+  
+@keyframes shake {
+    25% { transform: translate(-2px, 0px) scale(1.02); }
+    50% { transform: translate(2px, 0px) scale(1.02); }
+    75% { transform: translate(-1px, 0px) scale(1); }
+    100% { transform: translate(1px, 0px) scale(1); }
+}
